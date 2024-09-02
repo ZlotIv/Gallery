@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/hit_response.g.dart';
 
+/// A class representing a single photo hit response.
 @JsonSerializable()
 final class HitResponse {
   final int id;
@@ -54,6 +55,8 @@ final class HitResponse {
     required this.userImageURL,
   });
 
+  /// A class representing a single photo hit response.
   factory HitResponse.fromJson(Map<String, dynamic> json) => _$HitResponseFromJson(json);
+  /// Converts the [HitResponse] to a JSON object.
   Map<String, dynamic> toJson() => _$HitResponseToJson(this);
 }

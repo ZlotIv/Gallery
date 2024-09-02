@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:gallery_project/res/strings.dart';
 import 'package:get/get.dart';
 
+/// The URL parameter.
 const String urlParam = "url";
+/// The hero photo tag.
 const String heroPhotoTag = "photo_tag";
+/// The hero photo ID.
 const String heroPhotoId = "photo_id";
-
+/// The details page name.
 const String detailsPageName = "details_page";
 
+/// A page that displays the details of a selected photo.
 class DetailsPage extends StatelessWidget {
   const DetailsPage({super.key});
 

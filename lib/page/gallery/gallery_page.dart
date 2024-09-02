@@ -6,13 +6,20 @@ import '../../res/strings.dart';
 import '../details/details_page.dart';
 import 'controller/photo_controller.dart';
 
+/// A page that displays a gallery of photos.
 class GalleryPage extends StatelessWidget {
+  /// Scroll controller for handling scroll events.
   final ScrollController _scrollController = ScrollController();
+
+  /// Controller for managing photo gallery state and interactions.
   final PhotoController controller = Get.put(PhotoController(getUseCase: Get.find<GetPhotosUseCase>()));
+
+  /// Text editing controller for handling search input.
   final TextEditingController _searchController = TextEditingController();
 
   GalleryPage({super.key});
 
+  /// Builds the gallery page UI.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +41,7 @@ class GalleryPage extends StatelessWidget {
     );
   }
 
+  /// Builds the app bar with a search field.
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
       title: const Text(Strings.gallery),
@@ -57,6 +65,7 @@ class GalleryPage extends StatelessWidget {
     );
   }
 
+  /// Builds the photo layout as a grid view.
   Widget _buildPhotoLayout() {
     return GridView.builder(
       controller: _scrollController,
@@ -69,6 +78,7 @@ class GalleryPage extends StatelessWidget {
     );
   }
 
+  /// Builds a single photo item in the grid.
   Widget _buildPhotoItem(Photo currentPhoto) {
     return InkWell(
       onTap: () => Get.toNamed(detailsPageName,

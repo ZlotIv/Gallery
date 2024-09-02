@@ -19,13 +19,7 @@ void main() {
     home: GalleryPage(),
     getPages: [
       GetPage(name: "/", page: () => GalleryPage()),
-      GetPage(name: "/$detailsPageName", page: () => DetailsPage())
+      GetPage(name: "/$detailsPageName", page: () => const DetailsPage())
     ],
-    // initialRoute: "/",
-    //
-    // routes: {
-    //   "/": (context) => GalleryPage(),
-    //   detailsPageName: (context) => DetailsPage()
-    // }
   ));
 }
